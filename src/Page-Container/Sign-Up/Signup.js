@@ -25,6 +25,7 @@ const Signup = () => {
     }
     const googleSignup = () => {
         signInWithGoogle()
+        navigate('/')
     }
     const signup = (e) => {
         e.preventDefault()
@@ -34,13 +35,14 @@ const Signup = () => {
             return;
         }
         createUserWithEmailAndPassword(email, password)
+        navigate('/')
     }
     const [
         createUserWithEmailAndPassword
     ] = useCreateUserWithEmailAndPassword(authenication);
     return (
         <div className='form'>
-            <h3 className='my-5'><strong>Sign Up</strong></h3>
+            <h3 className='my-3 '><strong>Sign Up</strong></h3>
             <form className='mt-5' onSubmit={signup}>
                 <input className='form-input' type="email" onBlur={handleEmail} name="email" id="" defaultValue={"abc@something.com"} />
                 <br />
@@ -55,9 +57,9 @@ const Signup = () => {
                 <p>or</p>
                 <div className='line'></div>
             </div>
-            <button onClick={googleSignup}>Login With Google</button>
+            <button className='bg-primary font-bold text-white' onClick={googleSignup}>Login With Google</button>
             <ToastContainer />
-            <p>Already have an account at<strong>Photographer-ovilash</strong>? <span><Link to="/login">Login</Link></span> </p>
+            <p className='mt-4'>Already have an account at<strong>Photographer-ovilash</strong>? <span><Link to="/login">Login</Link></span> </p>
         </div>
     );
 };

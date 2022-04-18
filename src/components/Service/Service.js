@@ -1,9 +1,9 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Service.css'
 const Service = (props) => {
-    // console.log(props)
+    let navigate = useNavigate();
     return (
         <div>
             <div className='service'>
@@ -35,7 +35,7 @@ const Service = (props) => {
                 <div className="text text-center">
                     <h3>{props.service.name}</h3>
                     <p>{props?.service?.description}</p>
-                    <Link className='submit-btn text-decoration-none' to={'/checkout'}>Checkout</Link>
+                    <Link className='submit-btn text-decoration-none' to="/checkout">Checkout</Link>
                 </div>
             </div>
 

@@ -17,19 +17,23 @@
 
 .submit-btn {
     margin: 15px 0;
+    width: 108px;
+    height: 35px;
     background-color: rgb(61, 112, 241);
-    border-radius: 10px 25px 7px 40px;
+    border-radius: 74px 25px 46px 40px;
+    color: white;
+    font-weight: bold;
 }
 
 .line-container {
     display: flex;
-    margin: 20px 0;
+    margin: 10px 0;
     justify-content: center;
     align-items: center;
 }
 
 .line-container p {
-    margin-top: -6px;
+    margin-top: 8px;
 }
 
 .line {
