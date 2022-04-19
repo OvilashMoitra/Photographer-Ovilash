@@ -1,3 +1,14 @@
+### Photographer-Ovilash
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* I created the react app first.
+* After creating react app I installed react router, initialized firebase, react bootstrap ,react router hook etc.
+* After that I set up all thefile.
+* Then I create components and page containers.
+* After completing one section I commited my code to Github.
+* Finally I deployed my project to firebase.
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

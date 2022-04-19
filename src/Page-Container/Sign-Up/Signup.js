@@ -9,7 +9,7 @@ import { sendEmailVerification } from 'firebase/auth';
 import { Tree } from 'rsuite';
 
 const Signup = () => {
-    const [signInWithGoogle, emailUser, loading, error] = useSignInWithGoogle(authenication);
+    const [signInWithGoogle, emailUser, loading, googleError] = useSignInWithGoogle(authenication);
     let navigate = useNavigate();
     let location = useLocation();
     let [user] = useAuthState(authenication);
@@ -30,12 +30,13 @@ const Signup = () => {
         navigate('/')
     }
     const [
-        createUserWithEmailAndPassword
+        createUserWithEmailAndPassword,
+        error
     ] = useCreateUserWithEmailAndPassword(authenication, { sendEmailVerification: true });
 
     const signup = (e) => {
         e.preventDefault()
-
+        console.log(error)
         if (password !== confirmPassword) {
             toast("Password is not matching ")
             return;
@@ -54,16 +55,16 @@ const Signup = () => {
                 <br />
                 <input className='form-input' type="password" onBlur={handleConfirmPassword} name="confirmPassword" id="" placeholder='confirm password' required />
                 <br />
-                <button className='submit-btn' type="submit">Sign Up</button>
+                <button className='submit-btn mb-0' type="submit">Sign Up</button>
             </form>
             <div className='line-container'>
                 <div className='line'></div>
-                <p>or</p>
+                <p className='mx-2'>or</p>
                 <div className='line'></div>
             </div>
-            <button className='bg-primary font-bold text-white' onClick={googleSignup}>Login With Google</button>
+            <button className='submit-btn mt-0' onClick={googleSignup}>Login With Google</button>
             <ToastContainer />
-            <p className='mt-4'>Already have an account at<strong>Photographer-ovilash</strong>? <span><Link to="/login">Login</Link></span> </p>
+            <p className=''>Already have an account at<strong>Photographer-ovilash</strong>?<span><Link to="/login">Login</Link></span></p>
         </div>
     );
 };
