@@ -7,12 +7,14 @@ import Login from './Page-Container/Log-in/Login';
 import Signup from './Page-Container/Sign-Up/Signup';
 import Require from './Page-Container/RequireAuth/Require'
 import NotFound from './Page-Container/NotFound/NotFound';
+import Blogs from './Page-Container/Blogs/Blogs';
 function App() {
   return (
     <div >
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
+        <Route path="blogs" element={<Blogs></Blogs>} />
         <Route path="checkout" element={
           <Require>
             <Checkout></Checkout>
