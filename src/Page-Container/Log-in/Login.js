@@ -38,9 +38,9 @@ const Login = () => {
         <div className='form'>
             <h3 className='my-5'><strong>Login</strong></h3>
             <form onSubmit={signin}>
-                <input className='form-input' onBlur={handleEmail} type="email" name="" id="" placeholder='Enter your email here' />
+                <input className='form-input' onBlur={handleEmail} type="email" name="" id="" placeholder='Enter your email here' required />
                 <br />
-                <input className='form-input' onBlur={handlePassword} type="password" name="" id="" placeholder='Enter your password here' />
+                <input className='form-input' onBlur={handlePassword} type="password" name="" id="" placeholder='Enter your password here' required />
                 <br />
                 <button type="submit" className='submit-btn'>Login</button>
             </form>

@@ -6,6 +6,7 @@ import authenication from '../../firebase/firebase.init';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { sendEmailVerification } from 'firebase/auth';
+import { Tree } from 'rsuite';
 
 const Signup = () => {
     const [signInWithGoogle, emailUser, loading, error] = useSignInWithGoogle(authenication);
@@ -30,7 +31,8 @@ const Signup = () => {
     }
     const [
         createUserWithEmailAndPassword
-    ] = useCreateUserWithEmailAndPassword(authenication, [sendEmailVerification]);
+    ] = useCreateUserWithEmailAndPassword(authenication, { sendEmailVerification: true });
+
     const signup = (e) => {
         e.preventDefault()
 
@@ -46,11 +48,11 @@ const Signup = () => {
         <div className='form'>
             <h3 className='my-3 '><strong>Sign Up</strong></h3>
             <form className='mt-5' onSubmit={signup}>
-                <input className='form-input' type="email" onBlur={handleEmail} name="email" id="" defaultValue={"abc@something.com"} />
+                <input className='form-input' type="email" onBlur={handleEmail} name="email" id="" defaultValue={"abc@something.com"} required />
                 <br />
-                <input className='form-input' type="password" onBlur={handlePassword} name="password" id="" placeholder='enter password' />
+                <input className='form-input' type="password" onBlur={handlePassword} name="password" id="" placeholder='enter password' required />
                 <br />
-                <input className='form-input' type="password" onBlur={handleConfirmPassword} name="confirmPassword" id="" placeholder='confirm password' />
+                <input className='form-input' type="password" onBlur={handleConfirmPassword} name="confirmPassword" id="" placeholder='confirm password' required />
                 <br />
                 <button className='submit-btn' type="submit">Sign Up</button>
             </form>

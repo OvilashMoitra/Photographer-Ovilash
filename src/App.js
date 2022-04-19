@@ -6,6 +6,7 @@ import Checkout from './Page-Container/Checkout/Checkout';
 import Login from './Page-Container/Log-in/Login';
 import Signup from './Page-Container/Sign-Up/Signup';
 import Require from './Page-Container/RequireAuth/Require'
+import NotFound from './Page-Container/NotFound/NotFound';
 function App() {
   return (
     <div >
@@ -18,6 +19,7 @@ function App() {
           </Require>} />
         <Route path="login" element={<Login></Login>} />
         <Route path="signup" element={<Signup></Signup>} />
+        <Route path="*" element={<NotFound></NotFound>} />
       </Routes>
     </div>
   );

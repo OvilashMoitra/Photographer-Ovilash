@@ -27,6 +27,7 @@ function Navbar() {
                     <Link to='#' className='menu-bars'>
                         <FaIcons.FaBars onClick={showSidebar} />
                     </Link>
+                    <div className='d-flex mx-auto'><h3 className='text-white'><strong>Photographer-Ovilash</strong></h3></div>
                 </div>
                 <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
                     <ul className='nav-menu-items' onClick={showSidebar}>

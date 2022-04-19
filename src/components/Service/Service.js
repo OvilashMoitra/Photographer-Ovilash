@@ -35,6 +35,7 @@ const Service = (props) => {
                 <div className="text text-center">
                     <h3>{props.service.name}</h3>
                     <p>{props?.service?.description}</p>
+                    <p><strong> ${props?.service?.price} </strong></p>
                     <Link className='submit-btn text-decoration-none' to="/checkout">Checkout</Link>
                 </div>
             </div>
