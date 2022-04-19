@@ -7,11 +7,10 @@ import './Login.css'
 const Login = () => {
     let navigate = useNavigate();
     let location = useLocation();
-    let [user] = useAuthState(authenication);
+    let [user, loading] = useAuthState(authenication);
     let from = location.state?.from?.pathname || "/";
     const [
         signInWithEmailAndPassword,
-        loading,
         error,
     ] = useSignInWithEmailAndPassword(authenication);
     const [email, setEmail] = useState('')

@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import './Signup.css'
-import { useAuthState, useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useAuthState, useCreateUserWithEmailAndPassword, useSendEmailVerification, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import authenication from '../../firebase/firebase.init';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { sendEmailVerification } from 'firebase/auth';
 
 const Signup = () => {
     const [signInWithGoogle, emailUser, loading, error] = useSignInWithGoogle(authenication);
@@ -27,6 +28,9 @@ const Signup = () => {
         signInWithGoogle()
         navigate('/')
     }
+    const [
+        createUserWithEmailAndPassword
+    ] = useCreateUserWithEmailAndPassword(authenication, [sendEmailVerification]);
     const signup = (e) => {
         e.preventDefault()
 
@@ -37,9 +41,7 @@ const Signup = () => {
         createUserWithEmailAndPassword(email, password)
         navigate('/')
     }
-    const [
-        createUserWithEmailAndPassword
-    ] = useCreateUserWithEmailAndPassword(authenication);
+
     return (
         <div className='form'>
             <h3 className='my-3 '><strong>Sign Up</strong></h3>
