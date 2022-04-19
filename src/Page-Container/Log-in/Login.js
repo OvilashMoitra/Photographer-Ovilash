@@ -3,9 +3,13 @@ import { useAuthState, useSignInWithEmailAndPassword, useSignInWithGoogle } from
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import authenication from '../../firebase/firebase.init';
+import { useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
 import './Login.css'
 
 const Login = () => {
+    const [sendPasswordResetEmail] = useSendPasswordResetEmail(
+        authenication
+    );
     let navigate = useNavigate();
     let location = useLocation();
     const [error] = useAuthState(authenication)
@@ -65,6 +69,10 @@ const Login = () => {
                 <ToastContainer></ToastContainer>
                 <button className='submit-btn mt-0' onClick={googleSignup}>Login With Google</button>
                 <ToastContainer />
+                <p onClick={async () => {
+                    await sendPasswordResetEmail(email);
+                    alert('Sent email');
+                }}>Forget password?</p>
                 <p>New to <strong>Photographer-ovilash</strong>?<span><Link to="/signup">Create Account</Link></span> </p>
             </div>
         </div>

@@ -28,6 +28,9 @@ const Signup = () => {
     // if (user) {
     //     navigate('/')
     const googleSignup = async () => {
+        if (error) {
+            toast('Login failed')
+        }
         await signInWithGoogle();
         navigate('/')
     }
