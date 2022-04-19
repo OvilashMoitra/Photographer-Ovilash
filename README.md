@@ -1,5 +1,5 @@
 ### Photographer-Ovilash
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Open [https://photographer-ovilash.web.app/](https://photographer-ovilash.web.app/) to view it in your browser.
 * I created the react app first.
 * After creating react app I installed react router, initialized firebase, react bootstrap ,react router hook etc.
 * After that I set up all thefile.

@@ -39,10 +39,11 @@ const Login = () => {
     }
     const resetPass = async () => {
         if (!email) {
+            toast('write email first')
             return;
         }
         await sendPasswordResetEmail(email);
-        alert('Sent email');
+        toast(' password reset email sent');
     }
     const signin = (e) => {
 
