@@ -1,0 +1,29 @@
+.footer {
+    display: flex;
+    background-color: black;
+    color: white;
+    justify-content: space-around;
+    padding: 20px 0;
+    margin-top: 25px;
+    border-radius: 65px;
+}
+
+.description {
+    width: 30%;
+}
+
+.newsletter {
+    margin: auto 0;
+}
+
+.contact-icon {
+    margin-left: 5px;
+    box-shadow: 0px 7px 40px grey;
+    width: 2rem;
+    height: 2em;
+    border-radius: 50%;
+}
+
+.submitted {
+    width: 2em;
+}

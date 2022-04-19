@@ -28,7 +28,7 @@ const Counter = () => {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
-                className='vms-md-5 counter '><FontAwesomeIcon icon={faCalendarAlt}></FontAwesomeIcon><p>Work Experience</p> <div><CountUp end={3} />+</div></motion.div>
+                className='ms-md-5 counter '><FontAwesomeIcon icon={faCalendarAlt}></FontAwesomeIcon><p>Work Experience</p> <div><CountUp end={3} />+</div></motion.div>
         </div>
     );
 };

@@ -6,7 +6,7 @@ const Banner = () => {
 
     return (
         <div>
-            <Carousel fade className='carousel'>
+            <Carousel fade className='carousel' indicators={false}>
                 <Carousel.Item>
                     <img
                         className="d-block "
@@ -21,13 +21,13 @@ const Banner = () => {
                 <Carousel.Item>
                     <img
                         className="d-block "
-                        src="https://shaadiwish.com/blog/wp-content/uploads/2020/06/faisal-alam-1024x683.jpg"
+                        src="https://images.unsplash.com/photo-1621801306185-8c0ccf9c8eb8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aW5kaWFuJTIwd2VkZGluZyUyMHBob3RvZ3JhcGh5fGVufDB8fDB8fA%3D%3D&w=1000&q=80"
                         alt="Second slide"
                     />
 
                     <Carousel.Caption>
                         <h3>Best Pick</h3>
-                        <p>Nature Photography</p>
+                        <p>Wedding Photography</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
@@ -39,7 +39,7 @@ const Banner = () => {
 
                     <Carousel.Caption>
                         <h3>Best Pick</h3>
-                        <p>Wedding Photography</p>
+                        <p>Nature Photography</p>
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>

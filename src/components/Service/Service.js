@@ -12,7 +12,7 @@ const Service = (props) => {
                         <Carousel.Item >
                             <img
                                 className="d-block w-100 "
-                                src={props.service.img[1]}
+                                src={props.service.img[0]}
                                 alt="First slide"
                             />
                         </Carousel.Item>
@@ -34,9 +34,9 @@ const Service = (props) => {
                 </div>
                 <div className="text text-center">
                     <h3>{props.service.name}</h3>
-                    <p>{props?.service?.description}</p>
+                    <p className='p-2'>{props?.service?.description}</p>
                     <p><strong> ${props?.service?.price} </strong></p>
-                    <Link className='submit-btn text-decoration-none' to="/checkout">Checkout</Link>
+                    <Link className='submit-btn text-decoration-none d-block mx-auto p-2' to="/checkout">Checkout</Link>
                 </div>
             </div>
 

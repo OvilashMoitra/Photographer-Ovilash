@@ -2,6 +2,7 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import Banner from '../../components/Bannner/Banner';
 import Counter from '../../components/Counter/Counter';
+import Footer from '../../components/Footer/Footer';
 import NavBar from '../../components/Navbar/Navbar';
 import authenication from '../../firebase/firebase.init';
 import Services from '../Service/Services';
@@ -15,6 +16,7 @@ const Home = () => {
             <Banner></Banner>
             <Counter></Counter>
             <Services></Services>
+            <Footer></Footer>
         </div>
     );
 };
