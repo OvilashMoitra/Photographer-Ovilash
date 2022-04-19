@@ -37,6 +37,13 @@ const Login = () => {
         await signInWithGoogle()
         navigate('/')
     }
+    const resetPass = async () => {
+        if (!email) {
+            return;
+        }
+        await sendPasswordResetEmail(email);
+        alert('Sent email');
+    }
     const signin = (e) => {
 
         e.preventDefault()
@@ -69,10 +76,7 @@ const Login = () => {
                 <ToastContainer></ToastContainer>
                 <button className='submit-btn mt-0' onClick={googleSignup}>Login With Google</button>
                 <ToastContainer />
-                <p onClick={async () => {
-                    await sendPasswordResetEmail(email);
-                    alert('Sent email');
-                }}>Forget password?</p>
+                <p onClick={resetPass} className={'text-primary'}>Forget password?</p>
                 <p>New to <strong>Photographer-ovilash</strong>?<span><Link to="/signup">Create Account</Link></span> </p>
             </div>
         </div>
