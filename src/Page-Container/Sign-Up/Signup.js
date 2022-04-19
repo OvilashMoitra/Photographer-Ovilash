@@ -25,8 +25,10 @@ const Signup = () => {
     const handleConfirmPassword = e => {
         setConfirmPassword(e.target.value)
     }
-    const googleSignup = () => {
-        signInWithGoogle()
+    // if (user) {
+    //     navigate('/')
+    const googleSignup = async () => {
+        await signInWithGoogle();
         navigate('/')
     }
     const [
@@ -34,37 +36,42 @@ const Signup = () => {
         error
     ] = useCreateUserWithEmailAndPassword(authenication, { sendEmailVerification: true });
 
-    const signup = (e) => {
+    const signup = async (e) => {
         e.preventDefault()
         console.log(error)
         if (password !== confirmPassword) {
             toast("Password is not matching ")
             return;
         }
-        createUserWithEmailAndPassword(email, password)
+        await createUserWithEmailAndPassword(email, password)
         navigate('/')
     }
 
     return (
-        <div className='form'>
-            <h3 className='my-3 '><strong>Sign Up</strong></h3>
-            <form className='mt-5' onSubmit={signup}>
-                <input className='form-input' type="email" onBlur={handleEmail} name="email" id="" defaultValue={"abc@something.com"} required />
-                <br />
-                <input className='form-input' type="password" onBlur={handlePassword} name="password" id="" placeholder='enter password' required />
-                <br />
-                <input className='form-input' type="password" onBlur={handleConfirmPassword} name="confirmPassword" id="" placeholder='confirm password' required />
-                <br />
-                <button className='submit-btn mb-0' type="submit">Sign Up</button>
-            </form>
-            <div className='line-container'>
-                <div className='line'></div>
-                <p className='mx-2'>or</p>
-                <div className='line'></div>
+        <div className='login-form d-flex'>
+            <div className="img">
+                <img src={"https://i.pinimg.com/564x/3b/9f/f6/3b9ff649aa3572bbff978a9800dc95a8.jpg"} alt="" />
             </div>
-            <button className='submit-btn mt-0' onClick={googleSignup}>Login With Google</button>
-            <ToastContainer />
-            <p className=''>Already have an account at<strong>Photographer-ovilash</strong>?<span><Link to="/login">Login</Link></span></p>
+            <div className="form my-5">
+                <h3 className='my-3 '><strong>Sign Up</strong></h3>
+                <form className='mt-5' onSubmit={signup}>
+                    <input className='form-input' type="email" onBlur={handleEmail} name="email" id="" defaultValue={"abc@something.com"} required />
+                    <br />
+                    <input className='form-input' type="password" onBlur={handlePassword} name="password" id="" placeholder='enter password' required />
+                    <br />
+                    <input className='form-input' type="password" onBlur={handleConfirmPassword} name="confirmPassword" id="" placeholder='confirm password' required />
+                    <br />
+                    <button className='submit-btn mb-0' type="submit">Sign Up</button>
+                </form>
+                <div className='line-container'>
+                    <div className='line'></div>
+                    <p className='mx-2'>or</p>
+                    <div className='line'></div>
+                </div>
+                <button className='submit-btn mt-0' onClick={googleSignup}>Login With Google</button>
+                <ToastContainer />
+                <p className=''>Already have an account at<strong>Photographer-ovilash</strong>?<span><Link to="/login">Login</Link></span></p>
+            </div>
         </div>
     );
 };

@@ -47,7 +47,7 @@ function Navbar() {
                             );
                         })}
                         {
-                            user ? <FontAwesomeIcon onClick={logout} style={{ width: '18px', marginLeft: "15px" }} className='nav-text text-danger' icon={faSignOut}></FontAwesomeIcon> : <Link style={{ color: 'white', textDecoration: "none", marginLeft: "15px" }} className='nav-text' to={'/login'}><FontAwesomeIcon icon={faPeopleGroup} style={{ color: 'white' }}></FontAwesomeIcon>Login </Link>
+                            user ? <FontAwesomeIcon onClick={logout} style={{ width: '18px', marginLeft: "15px", cursor: 'pointer', borderRadius: '50%', background: 'white', height: "2em", paddingRight: "1em" }} className='nav-text text-danger' icon={faSignOut}></FontAwesomeIcon> : <Link style={{ color: 'white', textDecoration: "none", marginLeft: "15px" }} className='nav-text' to={'/login'}><FontAwesomeIcon icon={faPeopleGroup} style={{ color: 'white' }}></FontAwesomeIcon>Login </Link>
                         }
                     </ul>
                 </nav>

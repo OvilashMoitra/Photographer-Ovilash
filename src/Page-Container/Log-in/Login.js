@@ -29,8 +29,8 @@ const Login = () => {
     if (user) {
         navigate(from, { replace: true });
     }
-    const googleSignup = () => {
-        signInWithGoogle()
+    const googleSignup = async () => {
+        await signInWithGoogle()
         navigate('/')
     }
     const signin = (e) => {
@@ -44,24 +44,29 @@ const Login = () => {
 
     }
     return (
-        <div className='form my-5'>
-            <h3 className='my-5'><strong>Login</strong></h3>
-            <form onSubmit={signin}>
-                <input className='form-input' onBlur={handleEmail} type="email" name="" id="" placeholder='Enter your email here' required />
-                <br />
-                <input className='form-input' onBlur={handlePassword} type="password" name="" id="" placeholder='Enter your password here' required />
-                <br />
-                <button type="submit" className='submit-btn'>Login</button>
-            </form>
-            <div className='line-container'>
-                <div className='line'></div>
-                <p className='mx-2'>or</p>
-                <div className='line'></div>
+        <div className='login-form d-flex'>
+            <div className="img">
+                <img src={"https://i.pinimg.com/564x/3b/9f/f6/3b9ff649aa3572bbff978a9800dc95a8.jpg"} alt="" />
             </div>
-            <ToastContainer></ToastContainer>
-            <button className='submit-btn mt-0' onClick={googleSignup}>Login With Google</button>
-            <ToastContainer />
-            <p>New to <strong>Photographer-ovilash</strong>?<span><Link to="/signup">Create Account</Link></span> </p>
+            <div className='form my-5'>
+                <h3 className='my-5'><strong>Login</strong></h3>
+                <form onSubmit={signin}>
+                    <input className='form-input' onBlur={handleEmail} type="email" name="" id="" placeholder='Enter your email here' required />
+                    <br />
+                    <input className='form-input' onBlur={handlePassword} type="password" name="" id="" placeholder='Enter your password here' required />
+                    <br />
+                    <button type="submit" className='submit-btn'>Login</button>
+                </form>
+                <div className='line-container'>
+                    <div className='line'></div>
+                    <p className='mx-2'>or</p>
+                    <div className='line'></div>
+                </div>
+                <ToastContainer></ToastContainer>
+                <button className='submit-btn mt-0' onClick={googleSignup}>Login With Google</button>
+                <ToastContainer />
+                <p>New to <strong>Photographer-ovilash</strong>?<span><Link to="/signup">Create Account</Link></span> </p>
+            </div>
         </div>
     );
 };

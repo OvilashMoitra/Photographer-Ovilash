@@ -1,3 +1,14 @@
+.login-form .img {
+    display: flex;
+    justify-content: center;
+}
+
+.login-form .img img {
+    width: 54em;
+    height: 100vh;
+    position: relative;
+}
+
 .form {
     width: 500px;
     height: 600px;
@@ -7,6 +18,9 @@
     border-radius: 5px;
     margin: 10px auto;
     text-align: center;
+    z-index: 2;
+    position: absolute;
+    right: 22%;
 }
 
 .form-input {
